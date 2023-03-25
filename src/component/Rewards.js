@@ -3,11 +3,11 @@ import { useAppContext } from '../context/AppContext'
 import Web3 from "web3";
 import { truncateAddress } from '../utils/address';
 import { useNavigate } from 'react-router-dom';
-
-
-const smart_contract = "0xEc9776C6Ce7D9C93a6C5B5d1791C84d53D735b55";
 import abi from "../web3/ABI.json"
 import { ethers } from "ethers";
+
+const smart_contract = "0xEc9776C6Ce7D9C93a6C5B5d1791C84d53D735b55";
+
 let signer;
 let provider;
 let client_address;
