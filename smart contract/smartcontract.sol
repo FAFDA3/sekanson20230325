@@ -311,12 +311,12 @@ contract NFTWHITELISTED is ERC721Enumerable, Ownable {
   function retire_reward() public {
     if(isPR(payable(msg.sender)) == false){
           require(welcome[msg.sender].money > 0, "BRO you have nothing to retire");
-          (bool hs, ) = payable(msg.sender).call{value: welcome[msg.sender].money}("whidraw your reward...");
+          (bool hs, ) = payable(address(this)).call{value: welcome[msg.sender].money}("whidraw your reward...");
           require(hs);
           welcome[msg.sender].money = 0;
     } else if (isPR(payable (msg.sender))){
           require(welcome_PR[msg.sender].money > 0, "PR you have nothing to retire... GO TO WORK");
-          (bool hs, ) = payable(msg.sender).call{value: welcome_PR[msg.sender].money}("whidraw your reward...");
+          (bool hs, ) = payable(address(this)).call{value: welcome_PR[msg.sender].money}("whidraw your reward...");
           require(hs);
           welcome_PR[msg.sender].money = 0;
     }
