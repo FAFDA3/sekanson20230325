@@ -67,7 +67,7 @@ function Navbar() {
         provider = new ethers.providers.Web3Provider(window.ethereum);
         signer = await provider.getSigner();
         client_address = await signer.getAddress();
-        setconnection(true);
+        setconnection_(true);
         console.log(provider);
 
         welcomenft = new ethers.Contract(smart_contract, abi, signer);
