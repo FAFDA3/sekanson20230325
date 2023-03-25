@@ -213,6 +213,7 @@ function Mint() {
         set_nft_cost(cost / 1000000000000000000);
 
         console.log(n_address);
+        let list;
         for (let i = 0; i <= n_address + n_PR - 1; i++) {
           list[i] = await welcomenft.whitelist(i);
           console.log(list[i]);
@@ -222,7 +223,7 @@ function Mint() {
         setwhitelist(list);
         console.log(list);
         console.log("whitelist ready");
-        prdata();
+
         console.log("data");
 
         setdata(true);

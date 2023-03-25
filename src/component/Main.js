@@ -69,6 +69,7 @@ function Main() {
         console.log(cost);
         set_nft_cost(cost / 1000000000000000000);
 
+        let list;
         console.log(n_address);
         for (let i = 0; i <= n_address + n_PR - 1; i++) {
           list[i] = await welcomenft.whitelist(i);
@@ -79,7 +80,7 @@ function Main() {
         setwhitelist(list);
         console.log(list);
         console.log("whitelist ready");
-        prdata();
+
         console.log("data");
 
         setdata(true);
